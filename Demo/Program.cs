@@ -12,12 +12,12 @@ HttpClient client = new HttpClient
     BaseAddress = new Uri("http://localhost/MyWebApi/api/SKUWithDB/")
 };
 
-//CreateSku();
-//GetSku();
-//UpdateSku();
-//DeleteSku();
+CreateSku();
+GetSku();
+UpdateSku();
+DeleteSku();
 //GetError();
-GetSecure();
+//GetSecure();
 Console.ReadLine();
 
 
@@ -143,7 +143,7 @@ void UpdateSku()
     string json = JsonConvert.SerializeObject(sku);
     var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-    HttpResponseMessage response =  client.PutAsync("UpdateSKU/7", content).GetAwaiter().GetResult();
+    HttpResponseMessage response =  client.PutAsync("UpdateSKU/17", content).GetAwaiter().GetResult();
     if (response.IsSuccessStatusCode)
     {
         Console.WriteLine("SKU updated successfully.");
@@ -156,7 +156,7 @@ void UpdateSku()
 
 void DeleteSku()
 {
-    HttpResponseMessage response =  client.DeleteAsync("deletesku/7").GetAwaiter().GetResult(); 
+    HttpResponseMessage response =  client.DeleteAsync("deletesku/17").GetAwaiter().GetResult(); 
     if (response.IsSuccessStatusCode)
     {
         Console.WriteLine("SKU deleted successfully.");
