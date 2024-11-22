@@ -12,12 +12,12 @@ HttpClient client = new HttpClient
     BaseAddress = new Uri("http://localhost/MyWebApi/api/SKUWithDB/")
 };
 
-CreateSku();
-GetSku();
-UpdateSku();
-DeleteSku();
+//CreateSku();
+//GetSku();
+//UpdateSku();
+//DeleteSku();
 //GetError();
-//GetSecure();
+GetSecure();
 Console.ReadLine();
 
 
@@ -78,7 +78,7 @@ void GetSecure()
 
 void GetError()
 {
-    HttpResponseMessage response = client.GetAsync("GetError1").GetAwaiter().GetResult();
+    HttpResponseMessage response = client.GetAsync("GetError3").GetAwaiter().GetResult();
 
     if (!response.IsSuccessStatusCode)
     {
